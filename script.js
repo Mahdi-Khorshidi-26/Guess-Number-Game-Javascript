@@ -31,7 +31,9 @@ function compare(userInput, computerInput) {
   } else if (userInput == computerInput) {
     message.textContent = 'CONGRATULATIONS YOU WON';
     number.textContent = `${computerInput}`;
-    highscore.textContent = score.textContent;
+    if (Number(score.textContent) >= Number(highscore.textContent)) {
+      highscore.textContent = score.textContent;
+    }
     document.querySelector('body').style.backgroundColor = '#60b347';
     number.style.width = '30rem';
   }
